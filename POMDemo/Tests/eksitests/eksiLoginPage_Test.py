@@ -22,7 +22,6 @@ def driver():
 def test_eksiloginpage(driver):
     site=Eksi(driver)
     site.login_page.open_page()
-    site.login_page.login_fully('osmangngr','Oksana83')
+    site.login_page.login_fully('username','password')
     assert WebDriverWait(driver, 10).until(EC.url_to_be('https://eksisozluk.com/'))
-    assert WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//nav[@id='top-navigation']//a[@title='azgiderimuzgiderim']")))
-    assert WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "(//a[@title='azgiderimuzgiderim'])[2]")))
+    assert WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//nav[@id='top-navigation']//a[@href='/mesaj']")))

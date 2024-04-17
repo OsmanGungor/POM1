@@ -20,7 +20,7 @@ def driver():
 def test_eksibasliksearchpage(driver):
     site=Eksi(driver)
     site.login_page.open_page()
-    site.login_page.login_fully('osmangngr','Oksana83')
+    site.login_page.login_fully('username','password')
     site.write_entry.search_baslik("kayseri")
     assert WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//span[@itemprop='name']")))
     site.write_entry.write_entry("memleket")
